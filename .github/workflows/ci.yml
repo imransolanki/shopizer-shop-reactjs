@@ -18,3 +18,8 @@ jobs:
       - run: npm ci
       - run: npm run build
       - run: npm test -- --watchAll=false --passWithNoTests
+      - uses: actions/upload-artifact@v4
+        with:
+          name: shop-build
+          path: build/
+          retention-days: 7
